@@ -1,6 +1,5 @@
 $fn=128;
 
-include <ElektraMCAL.scad>;
 outerR = r + 2*basketRimR;
 funnelHeight = 20;
 insideHeight = 4.5;
@@ -26,8 +25,8 @@ union(){
 }
 circle(r = basketRimR, $fn = 100);
 }
-translate([-4,-8,0])
-square(8,8);
+translate([-100,-200,0])
+square(200,200);
 }
 }
 
