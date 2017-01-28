@@ -23,7 +23,10 @@ union(){
     polygon(points=[[-basketRimR, 0],[-basketRimR, insideHeight],[-basketRimR + wallThickness, insideHeight],[-basketRimR + wallThickness, 0]]);
     circle(r = basketRimOuterR, $fn = 100);
 }
-circle(r = basketRimR, $fn = 100);
+union(){
+    circle(r = basketRimR, $fn = 100);
+    removeFromRim();
+}
 }
 translate([-100,-200,0])
 square(200,200);
