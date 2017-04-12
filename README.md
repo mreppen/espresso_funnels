@@ -2,5 +2,6 @@
 Funnel designs for espresso baskets.
 
 Everything is written in OpenSCAD.
-Basket radius and rim radius separated into files specific to each basket model.
+All parameters deviating from default (generally only inner radius and basket rim radius) are set in separate files specific to each basket model.
+Nonsemicircular basket rims can also be accommodated (see Caravel basket file).
 Comments related to specific baskets reside in each such file.
