@@ -1,14 +1,31 @@
 $fn=128;
 
+// Default values are correct for MCAL. Can be changed in separate file.
+$r = 24.7;
+$basketRimR = 2.2;
+$funnelHeight = 20;
+$insideHeight = 4.5;
+$funnelR = 13;
+$wallThickness = 1.4;
+$eps = 0.01;
+$extraHeight = 1.2;
+
+// Set parameters specific to basket
+setParameters();
+
+r = $r;
+basketRimR = $basketRimR;
+funnelHeight = $funnelHeight;
+insideHeight = $insideHeight;
+funnelR = $funnelR;
+wallThickness = $wallThickness;
+eps = $eps;
+extraHeight = $extraHeight;
+
 outerR = r + 2*basketRimR;
-funnelHeight = 20;
-insideHeight = 4.5;
-funnelR = 13;
-wallThickness = 1.4;
-eps = 0.01;
-extraHeight = 1.2;
 
 difference(){
+    translate([0,0,extraHeight])
     union(){
         // Create funnel structure, leaving room for the rim section
         translate([0,0,-extraHeight])
@@ -40,7 +57,7 @@ difference(){
     // Cut out anything extra on the inside, along with some margin
     translate([0,0,-eps])
     union(){
-        //translate([0,0,-25]) cube([50,50,50]);
+        //translate([0,0,-eps]) cube([50,50,50]);
         //cylinder(basketRimR, r+basketRimR,r+basketRimR);
         cylinder(funnelHeight+extraHeight+eps,r+0.05-2*eps,r+0.05-2*eps);
     }
