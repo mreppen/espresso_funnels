@@ -9,8 +9,12 @@ eps = 0.01;
 
 difference(){
 union(){
-    cylinderWall(funnelHeight, outerR, outerR + funnelR);
-    translate([0,0,insideHeight]) cylinderWall(funnelHeight - insideHeight, r, outerR + funnelR);
+    difference () {
+        // Create funnel structure, leaving room for the rim section
+        cylinder(funnelHeight, outerR + wallThickness, outerR + funnelR + wallThickness);
+        translate([0,0,insideHeight]) cylinder(funnelHeight - insideHeight + eps, r, outerR + funnelR);
+        translate([0,0,-eps]) cylinder(basketRimR+eps, outerR, outerR);
+    }
     
 
 rotate_extrude(convexity = 10, $fn = 100)
