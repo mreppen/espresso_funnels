@@ -1,5 +1,5 @@
-// These dimensions have not been tested
-r = 21.7;
+// These dimensions have been successfully tested
+r = 21.8;
 basketRimR = 2.4;
 
 module removeFromRim() {
